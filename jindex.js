@@ -1,10 +1,12 @@
-let defaultGridSize = 2;
+//default grid size
+createGrid(25,25);
 
-createGrid(4,4);
+let selectedColor = 'black';
 
 function createGrid(rows, columns) {
     let container = document.getElementById('container');
 
+    //clears container
     while (container.firstChild) {
         container.removeChild(container.firstChild);
     }
@@ -12,28 +14,37 @@ function createGrid(rows, columns) {
     const containerWidth = container.clientWidth;
     const containerHeight = container.clientHeight;
 
+    //creates div's
     for (let i = 0; i < rows * columns; i++) {
         const gridSquare = document.createElement('div');
         gridSquare.className = 'grid-square';
         container.appendChild(gridSquare);
-
+        
+        //sets width of squares
         let divWidth = Math.floor(containerWidth / columns);
         let divHeight = Math.floor(containerHeight / rows);
         gridSquare.style.width = divWidth + 'px';
         gridSquare.style.height = divHeight + 'px';
     
+        //painting div's
         gridSquare.addEventListener('mouseover', ()=> {
-            gridSquare.classList.add('selectedSquare');
+            gridSquare.style.backgroundColor = selectedColor;
+              
         })
         }
     };
 
-const resizeButton = document.getElementById('resizeBtn');
-resizeButton.addEventListener('click', ()=> {
-    let size = prompt('Enter Size:');
+//resize functionality
+const resizeBar = document.getElementById('resizeBar');
+resizeBar.addEventListener('input', ()=> {
+    let size = resizeBar.value;
     createGrid(size, size);
 })
-    
 
-// width 100px 50 pixels ...width divided by the amount of divs
+//get selected color
+const colorPicker = document.getElementById('colorPicker')
+colorPicker.addEventListener('input', ()=> {
+    selectedColor = colorPicker.value;
+})
+
 
