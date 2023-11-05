@@ -4,25 +4,25 @@ createGrid(25,25);
 let selectedColor = 'black';
 
 function createGrid(rows, columns) {
-    let container = document.getElementById('container');
+    let gridContainer = document.getElementById('gridContainer');
 
-    //clears container
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
+    //clears gridContainer
+    while (gridContainer.firstChild) {
+        gridContainer.removeChild(gridContainer.firstChild);
     }
 
-    const containerWidth = container.clientWidth;
-    const containerHeight = container.clientHeight;
+    const gridContainerWidth = gridContainer.clientWidth;
+    const gridContainerHeight = gridContainer.clientHeight;
 
     //creates div's
     for (let i = 0; i < rows * columns; i++) {
         const gridSquare = document.createElement('div');
         gridSquare.className = 'grid-square';
-        container.appendChild(gridSquare);
+        gridContainer.appendChild(gridSquare);
         
         //sets width of squares
-        let divWidth = Math.floor(containerWidth / columns);
-        let divHeight = Math.floor(containerHeight / rows);
+        let divWidth = Math.floor(gridContainerWidth / columns);
+        let divHeight = Math.floor(gridContainerHeight / rows);
         gridSquare.style.width = divWidth + 'px';
         gridSquare.style.height = divHeight + 'px';
     

@@ -3,8 +3,11 @@ body {
     flex-direction: column-reverse;
     align-items: center;
 }
+.mainBox {
+    display: flex;
+}
 
-#container {
+#gridContainer {
     width: 300px;
     height: 300px;
     display: flex;
@@ -20,4 +23,12 @@ input[type="color"] {
     height: 50px;
     padding: 0;
     border: none;
+}
+#pickColorDiv {
+    display: flex;
+    flex-direction: column;
+}
+.gridBar {
+    display: flex;
+    flex-direction: column;
 }

@@ -8,14 +8,17 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="container"></div>
-    <div>
-      <input type="range" id="resizeBar" min="0" max="50" value="25" />
+    <div class="mainBox">
+      <div class="gridBar">
+        <input type="range" id="resizeBar" min="0" max="50" value="25" />
+        <div id="gridContainer"></div>
+      </div>
+      <div id="pickColorDiv">
+        <label for="colorPicker">Color:</label>
+        <input type="color" id="colorPicker" name="colorPicker" value="#000000" />
+      </div>
     </div>
-    <div>
-      <label for="colorPicker">Choose a color:</label>
-      <input type="color" id="colorPicker" name="colorPicker" value="#ff0000" />
-    </div>
+
     <script src="jindex.js"></script>
   </body>
 </html>
